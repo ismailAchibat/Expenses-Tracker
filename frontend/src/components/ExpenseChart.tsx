@@ -19,7 +19,7 @@ function ExpenseChart({ data }: Props) {
   }
 
   // Take the last 8 expenses
-  const recentData = data.reverse().slice(6);
+  const recentData = data.slice(0,6).reverse();
 
   // Format the date to show only month and day
   const formattedData = recentData.map((expense) => ({
