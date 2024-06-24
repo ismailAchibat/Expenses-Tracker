@@ -20,7 +20,7 @@ export const Route = createFileRoute("/_authentificated/expenses")({
 });
 
 function Expenses() {
-  const { isPending: isTotalSpentPending, error: totalSpentError, data: totalSpentData } = useQuery({
+  const { error: totalSpentError, data: totalSpentData } = useQuery({
     queryKey: ["get-total-spent"],
     queryFn: getTotalSpent,
   });
@@ -68,7 +68,7 @@ function Expenses() {
         <div className="grid grid-cols-2 text-center ">
           <div className=" p-4 shadow rounded-lg">
             <h3 className="text-green-500 text-lg">Total Spent</h3>
-            <p className=" text-md font-semibold">${isTotalSpentPending ? '...' : totalSpentData.total}</p>
+            <p className=" text-md font-semibold">{totalSpentData && totalSpentData.total !== null ? `$${totalSpentData?.total}` :'no expenses made yet' }</p>
           </div>
           <div className=" p-4 shadow rounded-lg">
             <h3 className="text-green-500 text-lg">Biggest Purchase</h3>

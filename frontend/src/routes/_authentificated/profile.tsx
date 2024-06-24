@@ -42,7 +42,7 @@ function Profile() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button asChild className="hover:bg-red-500">
+          <Button asChild className="hover:bg-red-500 hover:bg-opacity-50 hover:text-white">
             <a href="/api/logout">Log out</a>
           </Button>
           
