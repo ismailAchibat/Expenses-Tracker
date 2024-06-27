@@ -22,6 +22,9 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      external: ['vaul'],
+    },
   }
 })
