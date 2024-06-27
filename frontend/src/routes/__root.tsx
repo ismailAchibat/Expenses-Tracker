@@ -5,7 +5,6 @@ import {
   Outlet,
 } from "@tanstack/react-router";
 import { Toaster } from "../components/ui/sonner";
-import { cn } from "../lib/utils";
 import { Button } from "../components/ui/button";
 import {
   Drawer,
@@ -14,7 +13,6 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer";
 import { useState } from "react";
@@ -36,37 +34,37 @@ function NavBar() {
         <span className="text-green-500">Expenses</span> Tracker
       </Link>
       <div className="md:flex gap-4 max-w-2xl hidden">
-        <Link to="/" className="[&.active]:font-bold [&.active]:text-green-500">
+        <Link to="/" className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300">
           Home
         </Link>
         <Link
           to="/about"
-          className="[&.active]:font-bold [&.active]:text-green-500"
+          className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
         >
           About
         </Link>
         <Link
           to="/expenses"
-          className="[&.active]:font-bold [&.active]:text-green-500"
+          className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
         >
           Expenses
         </Link>
         <Link
           to="/create_expense"
-          className="[&.active]:font-bold [&.active]:text-green-500"
+          className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
         >
           Create Expense
         </Link>
         <Link
           to="/profile"
-          className="[&.active]:font-bold [&.active]:text-green-500"
+          className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
         >
           Profile
         </Link>
       </div>
       <div className="md:hidden flex items-center text-white">
         <Drawer open={open} onOpenChange={setOpen}>
-          <DrawerTrigger asChild>
+          <DrawerTrigger>
             <CiMenuFries />
           </DrawerTrigger>
           <DrawerContent>
@@ -75,31 +73,31 @@ function NavBar() {
                 <div className="flex flex-col text-lg">
                   <Link
                     to="/"
-                    className="[&.active]:font-bold [&.active]:text-green-500"
+                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
                   >
                     Home
                   </Link>
                   <Link
                     to="/about"
-                    className="[&.active]:font-bold [&.active]:text-green-500"
+                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
                   >
                     About
                   </Link>
                   <Link
                     to="/expenses"
-                    className="[&.active]:font-bold [&.active]:text-green-500"
+                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
                   >
                     Expenses
                   </Link>
                   <Link
                     to="/create_expense"
-                    className="[&.active]:font-bold [&.active]:text-green-500"
+                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
                   >
                     Create Expense
                   </Link>
                   <Link
                     to="/profile"
-                    className="[&.active]:font-bold [&.active]:text-green-500"
+                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
                   >
                     Profile
                   </Link>
