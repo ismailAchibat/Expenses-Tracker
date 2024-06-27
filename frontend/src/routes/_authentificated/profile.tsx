@@ -25,31 +25,32 @@ function Profile() {
 
   if (isPending) return "Loading ...";
   if (error) return "not logged in";
+  console.log(data.user.picture);
 
   return (
     <div className="p-2">
       <Card className="text-center max-w-lg m-auto bg-green-950 bg-opacity-10 rounded-xl shadow-md shadow-green-500/[0.1]">
         <CardHeader>
           <CardTitle className="m-auto">
-            <Avatar className="w-20 h-auto">
-              {data.user.picture && <AvatarImage src={data.user.picture} />}
-              <AvatarFallback>{data.user.given_name}</AvatarFallback>
-            </Avatar>
+          <Avatar className="w-20 h-auto">
+  {data.user.picture && <AvatarImage src={data.user.picture}  />}
+  <AvatarFallback className="rounded-full text-3xl">{data.user.given_name.split('')[0]}</AvatarFallback>
+</Avatar>
           </CardTitle>
           <CardDescription>
-          <p>{data.user.given_name} {data.user.family_name}</p>
-          <p>{data.user.email}</p>
+            {data.user.given_name} {data.user.family_name} <br />
+            {data.user.email}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button asChild className="hover:bg-red-500 hover:bg-opacity-50 hover:text-white">
+          <Button
+            asChild
+            className="hover:bg-red-500 hover:bg-opacity-50 hover:text-white"
+          >
             <a href="/api/logout">Log out</a>
           </Button>
-          
         </CardContent>
       </Card>
-
-      
     </div>
   );
 }
