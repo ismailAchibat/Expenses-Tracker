@@ -54,7 +54,7 @@ function Index() {
               />
             </CardItem>
             <div className="flex justify-center items-center mt-8">
-              <a href="/api/login">
+              <a href="/api/register">
                 <CardItem
                   translateZ={20}
                   as="button"
