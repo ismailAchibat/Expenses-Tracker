@@ -6,15 +6,6 @@ import {
 } from "@tanstack/react-router";
 import { Toaster } from "../components/ui/sonner";
 import { Button } from "../components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTrigger,
-} from "../components/ui/drawer";
 import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 
@@ -63,7 +54,7 @@ function NavBar() {
         </Link>
       </div>
       <div className="md:hidden flex items-center text-white">
-        <Drawer open={open} onOpenChange={setOpen}>
+        {/* <Drawer open={open} onOpenChange={setOpen}>
           <DrawerTrigger>
             <CiMenuFries />
           </DrawerTrigger>
@@ -110,7 +101,8 @@ function NavBar() {
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
-        </Drawer>
+        </Drawer> */}
+        test
       </div>
       <Toaster />
     </div>
