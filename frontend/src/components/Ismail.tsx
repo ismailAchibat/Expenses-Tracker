@@ -1,4 +1,3 @@
-"use client";
 import { CiLinkedin } from "react-icons/ci";
 import { LuGithub } from "react-icons/lu";
 import {
