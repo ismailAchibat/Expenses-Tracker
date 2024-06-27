@@ -4,9 +4,14 @@ import {
   Link,
   Outlet,
 } from "@tanstack/react-router";
-import { Toaster } from "../components/ui/sonner";
-import { Button } from "../components/ui/button";
-import { useState } from "react";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "../components/ui/menubar";
+
 import { CiMenuFries } from "react-icons/ci";
 
 export interface MyRouterContext {
@@ -18,14 +23,16 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 });
 
 function NavBar() {
-  const [open, setOpen] = useState(false);
   return (
     <div className="p-2 flex justify-between mx-10">
       <Link to="/" className="text-xl font-semibold">
         <span className="text-green-500">Expenses</span> Tracker
       </Link>
       <div className="md:flex gap-4 max-w-2xl hidden">
-        <Link to="/" className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300">
+        <Link
+          to="/"
+          className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+        >
           Home
         </Link>
         <Link
@@ -54,57 +61,56 @@ function NavBar() {
         </Link>
       </div>
       <div className="md:hidden flex items-center text-white">
-        {/* <Drawer open={open} onOpenChange={setOpen}>
-          <DrawerTrigger>
-            <CiMenuFries />
-          </DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader className="text-center">
-              <DrawerDescription>
-                <div className="flex flex-col text-lg">
-                  <Link
-                    to="/"
-                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    to="/about"
-                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    to="/expenses"
-                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
-                  >
-                    Expenses
-                  </Link>
-                  <Link
-                    to="/create_expense"
-                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
-                  >
-                    Create Expense
-                  </Link>
-                  <Link
-                    to="/profile"
-                    className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
-                  >
-                    Profile
-                  </Link>
-                </div>
-              </DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter className="pt-2">
-              <DrawerClose asChild>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer> */}
-        test
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger>
+              <CiMenuFries />
+            </MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                <Link
+                  to="/"
+                  className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+                >
+                  Home
+                </Link>
+              </MenubarItem>
+              <MenubarItem>
+                <Link
+                  to="/about"
+                  className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+                >
+                  About
+                </Link>
+              </MenubarItem>
+              <MenubarItem>
+                <Link
+                  to="/expenses"
+                  className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+                >
+                  Expenses
+                </Link>
+              </MenubarItem>
+              <MenubarItem>
+                <Link
+                  to="/create_expense"
+                  className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+                >
+                  Create Expense
+                </Link>
+              </MenubarItem>
+              <MenubarItem>
+                <Link
+                  to="/profile"
+                  className="[&.active]:font-bold [&.active]:text-green-500 hover:text-green-300"
+                >
+                  Profile
+                </Link>
+              </MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
       </div>
-      <Toaster />
     </div>
   );
 }
